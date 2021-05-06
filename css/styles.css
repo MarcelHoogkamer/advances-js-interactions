@@ -26,7 +26,7 @@ body {
 }
 
 .sticky + .contentwrapper {
-  margin-top: 200px;
+  margin-top: 300px;
 }
 
 label {
@@ -76,6 +76,10 @@ body.night .shown {
 }
 body.night .contentwrapper {
   background-color: rgba(10, 10, 10, 0.95);
+}
+body.night .next, body.night .prev {
+  color: #0a0a0a;
+  background-color: rgba(245, 245, 245, 0.5);
 }
 
 .main {
@@ -150,7 +154,7 @@ body.night .contentwrapper {
   border: none;
   padding: 15px 5px;
   color: white;
-  background-color: #1f1f1f;
+  background-color: darkgray;
   cursor: pointer;
 }
 
