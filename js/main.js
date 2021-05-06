@@ -79,6 +79,21 @@ function makeElement(slide) {
 }
 makeElement(slide);
 
+//PARALLAX SLIDER
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
+
 //IMAGE GALLERY
 let largeView = document.querySelector(".largeView");
 let largeImage = document.querySelector(".largeImage");

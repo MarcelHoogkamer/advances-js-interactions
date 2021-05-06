@@ -12,12 +12,21 @@ body {
   text-align: justify;
 }
 
-header {
+.header {
   display: flex;
   width: 100%;
-  height: 60px;
+  margin-bottom: 10px;
+}
+
+.sticky {
   position: fixed;
-  z-index: 1;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+.sticky + .contentwrapper {
+  margin-top: 200px;
 }
 
 label {
@@ -48,6 +57,10 @@ label.active:before {
   background: whitesmoke;
 }
 
+.stickylabel {
+  position: fixed;
+}
+
 body.night {
   background: #000;
   color: whitesmoke;
@@ -61,10 +74,23 @@ body.night .image:hover {
 body.night .shown {
   border: 2px solid whitesmoke;
 }
+body.night .contentwrapper {
+  background-color: rgba(10, 10, 10, 0.95);
+}
+
+.main {
+  margin-bottom: 10px;
+}
+
+.contentwrapper {
+  background-color: rgba(255, 255, 255, 0.95);
+}
 
 .container {
   width: 80%;
   height: auto;
+  margin: auto;
+  z-index: 1;
 }
 
 .slider {
@@ -84,7 +110,7 @@ body.night .shown {
   font-size: 50px;
   z-index: 2;
   border-radius: 2px;
-  padding-top: 100px;
+  padding-top: 10px;
   transition: 2s ease-in;
 }
 
@@ -101,7 +127,7 @@ body.night .shown {
 .indicators {
   width: max-content;
   height: 20px;
-  margin: 200px auto 0;
+  margin: 20px auto 0;
   display: flex;
 }
 
@@ -141,13 +167,13 @@ body.night .shown {
 .next {
   display: block;
   right: 20%;
-  top: 250px;
+  top: 175px;
 }
 
 .prev {
   display: block;
   left: 20%;
-  top: 250px;
+  top: 175px;
 }
 
 .before,
@@ -156,8 +182,8 @@ body.night .shown {
   display: block;
   height: 165px;
   width: 200px;
-  padding-top: 100px;
-  margin-top: 50px;
+  padding-top: 20px;
+  margin-top: 30px;
   filter: blur(5px);
   border: none;
 }
@@ -341,7 +367,7 @@ body.night .shown {
 .title {
   font-size: 1.5em;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
