@@ -80,6 +80,20 @@ function makeElement(slide) {
 makeElement(slide);
 
 //IMAGE GALLERY
+let largeView = document.querySelector(".largeView");
+let largeImage = document.querySelector(".largeImage");
+let caption = document.getElementById("caption");
+
+document.querySelectorAll(".card").forEach(element => {
+  element.addEventListener("click", event => {
+    largeView.style.display = "block";
+    largeImage.src = event.target.src;
+    caption.innerHTML = event.target.alt;
+  });
+});
+document.querySelector(".close").addEventListener("click", () => {
+  largeView.style.display = "none";
+});
 
 //FOLLOW THE MOUSE
 

@@ -10,86 +10,121 @@
 <body>
 <!-- DARK MODE -->
 <header>
-      <label id="dark-change"></label>
+  <label id="dark-change"></label>
 </header>
 <section class="main container">
-<!-- CAROUSEL -->
-<div class="container">
-  <div class="slider">
-    <div class="slide one"><img src="img/1.jpg" alt="Italy"></div>
-    <div class="slide two"><img src="img/2.jpg" alt="Italy"></div>
-    <div class="slide three"><img src="img/3.jpg" alt="Italy"></div>
-    <div class="slide four"><img src="img/4.jpg" alt="Italy"></div>
-    <div class="slide five"><img src="img/5.jpg" alt="Italy"></div>
-    <div class="slide six"><img src="img/6.jpg" alt="Italy"></div>
+  <!-- CAROUSEL -->
+  <div class="container">
+    <div class="slider">
+      <div class="slide one"><img src="img/1.jpg" alt="Italy"></div>
+      <div class="slide two"><img src="img/2.jpg" alt="Italy"></div>
+      <div class="slide three"><img src="img/3.jpg" alt="Italy"></div>
+      <div class="slide four"><img src="img/4.jpg" alt="Italy"></div>
+      <div class="slide five"><img src="img/5.jpg" alt="Italy"></div>
+      <div class="slide six"><img src="img/6.jpg" alt="Italy"></div>
+    </div>
+    <div class="buttons">
+      <button class="prev" onclick="prev()">
+        <i class="fas fa-angle-left"></i></button>
+      <button class="next" onclick="next()">
+        <i class="fas fa-angle-right"></i></button>
+    </div>
+    <div class="indicators">
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+    </div>
   </div>
-  <div class="buttons">
-    <button class="prev" onclick="prev()">
-      <i class="fas fa-angle-left"></i></button>
-    <button class="next" onclick="next()">
-      <i class="fas fa-angle-right"></i></button>
-  </div>
-  <div class="indicators">
-    <div class="indicator"></div>
-    <div class="indicator"></div>
-    <div class="indicator"></div>
-    <div class="indicator"></div>
-    <div class="indicator"></div>
-    <div class="indicator"></div>
-  </div>
-</div>
 
-  <div class="row collage">
-    <div class="col-12 title">I want a collage here, and if I click the image, it will enlarge and give me a short description!</div>
+  <!-- IMAGE GALLERY -->
+
+  <div class="row collage background" id="images-box">
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/1.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food1.jpg" alt="Italian food">
+      </div>
     </div>
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/2.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food2.jpg" alt="Italian food">
+      </div>
     </div>
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/3.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food3.jpg" alt="Italian food">
+      </div>
     </div>
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/4.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food4.jpg" alt="Italian food">
+      </div>
     </div>
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/5.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food5.jpg" alt="Italian food">
+      </div>
     </div>
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/6.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food6.jpg" alt="Italian food">
+      </div>
     </div>
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/1.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food7.jpg" alt="Italian food">
+      </div>
     </div>
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/2.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food8.jpg" alt="Italian food">
+      </div>
     </div>
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/3.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food9.jpg" alt="Italian food">
+      </div>
     </div>
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/4.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food10.jpg" alt="Italian food">
+      </div>
     </div>
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/5.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food11.jpg" alt="Italian food">
+      </div>
     </div>
+
     <div class="col-3 picture">
-      <div class="image"><img src="img/6.jpg" alt="Italy"></div>
+      <div class="card">
+        <img class="image" src="img/food/food12.jpg" alt="Italian food">
+      </div>
     </div>
-    <div class="col-3 picture">
-      <div class="image"><img src="img/1.jpg" alt="Italy"></div>
+
+    <div class="largeView">
+      <span class="close">×</span>
+      <img class="largeImage"/>
+      <div id="caption"></div>
     </div>
-    <div class="col-3 picture">
-      <div class="image"><img src="img/2.jpg" alt="Italy"></div>
-    </div>
-    <div class="col-3 picture">
-      <div class="image"><img src="img/3.jpg" alt="Italy"></div>
-    </div>
-    <div class="col-3 picture">
-      <div class="image"><img src="img/4.jpg" alt="Italy"></div>
-    </div>
+
   </div>
+
+
+
   <div class="row popupText">
     <div class="col-12 title">When I hover a Pokemon's name, I want to get a small popup image above it to see what it looks like!</div>
     <div class="col-12 text">It is stated in multiple Pokédex entries that some Pokémon are known to eat others, such as <span class="poke">Pidgeot</span> swooping down to catch a <span class="poke">Magikarp</span> meal from the water. Humans have also been implied to eat Pokémon, with the player's Mom's Cinnabar Volcano Burgers and Team Rocket's plot to sell <span class="poke">Slowpoke</span> Tails as a sweet treat. <span class="poke">Farfetch'd</span> itself is based on a specific manner for preparing a meal of duck, with its rarity in the wild being a result of overhunting.</div>
