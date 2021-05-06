@@ -1,349 +1,231 @@
-// IMPORTS
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
-
-// GENERAL STYLING
-
-* {
-  font-family: 'Cute Font', open-sans, serif;
-  font-size: 28px;
+*, *:before, *:after {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  overflow-x: hidden;
+body{
+  padding-bottom: 50px;
+  font-family: 'Poppins', sans-serif;
+  text-align: justify;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-
-  &:hover {
-    color: deeppink;
-    text-decoration: underline;
-  }
-}
-
-// THE NAV BAR
-
-nav {
-  left: 50px;
-  display: block;
+// DARK MODE FEATURE
+header {
+  display: flex;
+  width: 100%;
+  height: 60px;
   position: fixed;
-  z-index: 13;
+  z-index: 1;
+}
 
-  li {
-    margin: auto;
-    text-decoration: none;
-    list-style: none;
-    display: inline-block;
-    padding: 20px;
-    filter: invert(0%);
-    animation: invertbg 20s ease-in-out 0s forwards;
+label {
+  position: absolute;
+  width: 45px;
+  height: 22px;
+  right: 20px;
+  top: 20px;
+  border: 3px solid rgb(10, 10, 10);
+  border-radius: 20px;
+}
+
+label:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  left: 1px;
+  top: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgb(10, 10, 10);
+  transition: 0.4s ease-in;
+}
+
+label.active:before {
+  left: 22px;
+  background: rgb(245, 245, 245);
+}
+
+body.night {
+  background: #000;
+  color: rgb(245, 245, 245);
+
+  label {
+    border: 3px solid rgb(245, 245, 245);
   }
 }
 
-// THE CONTENT BOX
-
-.content {
-  position: relative;
-  top: 0;
+//PARALLAX IMAGE SLIDER
+.container {
+  width: 80%;
+  height: auto;
+}
+.slider {
+  height: 300px;
+  width: max-content;
   margin: auto;
   display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 1564px;
-  overflow: hidden;
-  transform: scale(0.95);
-
-  p {
-    color: black;
-    margin: 0 auto;
-    padding-top: 10px;
-    text-align: center;
-    font-size: 50px;
-    z-index: 12;
-    position: fixed;
-    filter: invert(0%);
-    animation: invertbg 20s ease-in-out 0s forwards;
-  }
-
-  h6 {
-    z-index: 12;
-    color: black;
-    margin: 0 auto;
-    padding-top: 60px;
-    text-align: center;
-    position: fixed;
-    filter: invert(0%);
-    animation: invertbg 20s ease-in-out 0s forwards;
-  }
-
+  text-align: center;
+  color: white;
+  transition: 2s ease-in;
+}
+.slider .slide {
+  width: 400px;
+  height: 300px;
+  display: none;
+  font-size: 50px;
+  z-index: 2;
+  border-radius: 2px;
+  padding-top: 100px;
+  transition: 2s ease-in;
+}
+.slider .slide:nth-child(1) {
+  display: block;
+}
+.slider img {
+  width: 400px;
+  height: 300px;
+  border: 3px solid black;
 }
 
-// THE IMAGES BOX
-
-.layer {
+.indicators {
+  width: max-content;
+  height: 20px;
+  margin: 200px auto 0;
+  display: flex;
+}
+.indicators .indicator {
+  background: darkgray;
+  height: 10px;
+  width: 10px;
+  margin: 2px;
+  border-radius: 50%;
+}
+.indicators .indicator:nth-child(1) {
+  background: dimgray;
+}
+.prev,
+.next {
   position: absolute;
+  font-size: 20px;
+  border: none;
+  padding: 15px 5px;
+  color: white;
+  background-color: #1f1f1f;
+  cursor: pointer;
 }
-
-// THE IMAGES
-
-.background {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/11_background.png');
-  background-repeat: repeat-x;
-  filter: invert(0%), grayscale(0%);
-  animation: invertbg 20s ease-in-out 0s forwards;
+.prev:focus,
+.next:focus {
+  outline: none;
 }
-
-.clouds {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/10_distant_clouds.png');
-  background-repeat: repeat-x;
-  transform: translateX(0);
-  animation: clouds-shift 100s linear infinite;
+.prev:hover,
+.next:hover {
+  background: powderblue;
 }
-
-.clouds2 {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/09_distant_clouds1.png');
-  background-repeat: repeat-x;
-  transform: translateX(0);
-  animation: clouds2-shift 80s linear infinite;
+.next {
+  display: block;
+  right: 20%;
+  top: 250px;
 }
-
-.clouds3 {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/08_clouds.png');
-  background-repeat: repeat-x;
-  transform: translateX(0);
-  animation: clouds3-shift 70s linear infinite;
+.prev {
+  display: block;
+  left: 20%;
+  top: 250px;
 }
-
-.hugeclouds {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/07_huge_clouds.png');
-  background-repeat: repeat-x;
-  transform: translateX(0);
-  filter: grayscale(0%);
-  animation: hugeclouds-shift 90s linear infinite;
+.before,
+.after {
+  position: absolute;
+  display: block;
+  height: 165px;
+  width: 200px;
+  padding-top: 100px;
+  margin-top: 50px;
+  filter: blur(5px);
+  border: none;
 }
-
-.sun {
-  background-image: url("../img/sun.png");
-  background-size: auto 100%;
-  will-change: background-position;
-  height: 1546px;
-  width:100%;
-  background-repeat: no-repeat;
-  transform: translateY(0);
-  animation: sun-shift 160s linear infinite;
+.before {
+  margin-left: -280px;
 }
-
-.kite {
-  background-image: url("../img/kite.png");
-  background-size: auto 100%;
-  will-change: background-position;
-  top: -200px;
-  height: 1546px;
-  width:100%;
-  background-repeat: no-repeat;
-  transform: translateX(0);
-  animation: kite-shift 5s linear infinite;
-}
-
-.balloon {
-  background-image: url("../img/balloon.png");
-  background-size: auto 100%;
-  will-change: background-position;
-  top: -200px;
-  height: 1546px;
-  width:100%;
-  background-repeat: no-repeat;
-  transform: translateX(0);
-  animation: balloon-shift 60s linear infinite;
-}
-
-.hill {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/06_hill2.png');
-  background-repeat: repeat-x;
-  transform: translateX(0);
-  animation: hill-shift 50s linear infinite;
-}
-
-.hill2 {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/05_hill1.png');
-  background-repeat: repeat-x;
-  transform: translateX(0);
-  animation: hill2-shift 40s linear infinite;
-}
-
-.bushes {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/04_bushes.png');
-  background-repeat: repeat-x;
-  transform: translateX(0);
-  animation: bushes-shift 30s linear infinite;
-}
-
-.distanttrees {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/03_distant_trees.png');
-  background-repeat: repeat-x;
-  transform: translateX(0);
-  animation: distanttrees-shift 20s linear infinite;
-}
-
-.treesbushes {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/02_trees and bushes.png');
-  background-repeat: repeat-x;
-  transform: translateX(0);
-  animation: treesbushes-shift 20s linear infinite;
-}
-
-.car {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/car2.png');
-  background-repeat: repeat-x;
-  transform: translateX(0);
-  animation: car-shift 40s linear infinite;
-}
-
-.ground {
-  height: 1546px;
-  width:100%;
-  background-image: url('../img/01_ground.png');
-  background-repeat: repeat-x;
-  transform: translateX(0);
-  animation: ground-shift 20s linear infinite;
-}
-
-.bird {
-  background-image: url("../img/bird-cells.svg");
-  background-size: auto 100%;
-  width: 86px;
-  height: 125px;
-  will-change: background-position;
-  animation-name: fly-cycle;
-  animation-timing-function: steps(10);
-  animation-iteration-count: infinite;
-  animation-duration: 1s;
-  animation-delay: -0.5s;
-  overflow: hidden;
-}
-
-@keyframes invertbg {
-  from { filter: invert(0%); }
-  to { filter: invert(100%); }
+.after {
+  margin-left: 280px;
 }
 
 
-@keyframes fly-cycle {
-  100% {
-    background-position: -900px 0;
+// END OF PARALLAX IMAGE SLIDER
+
+.picture{
+  padding: 10px;
+}
+
+.image{
+  height: 250px;
+}
+
+.image img {
+  height: 250px;
+  width: 100%;
+  filter: grayscale(50%);
+
+  &:hover {
+    filter: grayscale(0%);
+    border-radius: 20px;
+    border: 2px solid rgba(10, 10, 10);
   }
 }
 
-//THE ANIMATIONS
-
-@keyframes sun-shift {
-  from { background-position: 0 0; }
-  to { background-position: 0 2048px; }
+.poke{
+  font-weight: bold;
 }
 
-@keyframes kite-shift {
-  0% {
-    transform: translateY(0);
-  }
-  60% {
-    transform: translateY(100px);
-  }
-  80% {
-    transform: translateY(50px);
-  }
-  100% {
-    transform: translateY(80);
-  }
+.chaser{
+  width: 50px;
+  height: 50px;
+  background: red;
+  border-radius: 50%;
 }
 
-
-@keyframes balloon-shift {
-  from { background-position: 0 0; }
-  to { background-position: 2048px 0; }
+.runner{
+  width: 50px;
+  height: 50px;
+  background: green;
+  border-radius: 50%;
 }
 
-@keyframes clouds-shift {
-  from { background-position: 0 0; }
-  to { background-position: 2048px 0; }
+.box{
+  border: 1px solid grey;
+  height: 350px;
 }
 
-@keyframes clouds2-shift {
-  from { background-position: 0 0; }
-  to { background-position: -2048px 0; }
+.title{
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
 }
 
-@keyframes clouds3-shift {
-  from { background-position: 0 0; }
-  to { background-position: 2048px 0; }
+.bigTitle{
+  font-size: 2.5em;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
-@keyframes hugeclouds-shift {
-  from { background-position: 0 0;
-  opacity: 1;
-    filter: grayscale(0%); }
-  to { background-position: -2048px 0;
-  opacity: 0.1;
-    filter: grayscale(100%);}
+.mode{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  line-height: 47px;
+  height: 50px;
+  width: 50px;
+  border: 1px solid grey;
+  border-radius: 50%;
 }
 
-@keyframes hill-shift {
-  from { background-position: 0 0; }
-  to { background-position: -2048px 0; }
-}
-
-@keyframes hill2-shift {
-  from { background-position: 0 0; }
-  to { background-position: 2048px 0; }
-}
-
-@keyframes bushes-shift {
-  from { background-position: 0 0; }
-  to { background-position: -2048px 0; }
-}
-
-@keyframes distanttrees-shift {
-  from { background-position: 0 0; }
-  to { background-position: -2048px 0; }
-}
-
-@keyframes treesbushes-shift {
-  from { background-position: 0 0; }
-  to { background-position: -2048px 0; }
-}
-
-@keyframes car-shift {
-  from { background-position: 0 0; }
-  to { background-position: -12000px 0; }
-}
-
-@keyframes ground-shift {
-  from { background-position: 0 0; }
-  to { background-position: 2048px 0; }
+.mode:hover{
+  cursor: pointer;
 }
