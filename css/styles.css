@@ -58,6 +58,9 @@ body.night label {
 body.night .image:hover {
   border: 2px solid whitesmoke;
 }
+body.night .shown {
+  border: 2px solid whitesmoke;
+}
 
 .container {
   width: 80%;
@@ -194,7 +197,7 @@ body.night .image:hover {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: rgba(10, 10, 10, 0.8);
 }
 
@@ -238,6 +241,7 @@ body.night .image:hover {
 
 .image {
   height: 250px;
+  width: 310px;
   filter: grayscale(50%);
 }
 .image:hover {
@@ -270,37 +274,27 @@ body.night .image:hover {
   cursor: pointer;
 }
 
-.hover-image {
-  visibility: hidden;
+.on-top {
+  z-index: 99;
 }
 
-body:not(.mobile) .city:hover + .hover-image {
-  visibility: visible;
-  pointer-events: none;
+.relative {
+  position: relative;
 }
 
-.hover-image {
-  display: flex;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 4;
-  pointer-events: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.absolute {
+  position: absolute;
+}
+
+.shown {
+  margin-top: -210px;
+  margin-left: -130px;
   border: 2px solid #0a0a0a;
-  width: 200px;
-  height: 200px;
+  display: inline-block;
 }
 
-.hover-image img {
-  max-width: 100% !important;
-  max-height: 100% !important;
-  width: auto !important;
-  height: auto !important;
-  margin-bottom: 0;
+.hidden {
+  display: none;
 }
 
 .chaser {
@@ -308,6 +302,28 @@ body:not(.mobile) .city:hover + .hover-image {
   height: 50px;
   background: red;
   border-radius: 50%;
+}
+
+.container2 {
+  margin: 0 auto;
+  height: 300px;
+  width: 100%;
+  border: 1px #000 solid;
+  position: relative;
+}
+
+.box-bounds2 {
+  padding: 10px;
+  position: absolute;
+}
+
+.box2 {
+  width: 50px;
+  height: 50px;
+  border: 1px #000 solid;
+  right: 200px;
+  background: red;
+  transition: 0.5s;
 }
 
 .runner {

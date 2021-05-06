@@ -95,7 +95,69 @@ document.querySelector(".close").addEventListener("click", () => {
   largeView.style.display = "none";
 });
 
+//IMAGE ON HOVER
+
+let queried = document.querySelectorAll('.onhover-toggle-child-class');
+let elements = Array.prototype.slice.call(queried);
+
+let onhover = function(event) {
+  let element = event.srcElement || event.target;
+  let selector = element.getAttribute('data-target');
+  let classes = element.getAttribute('data-toggle').split(' ');
+  let childs = element.querySelectorAll(selector);
+
+  childs.forEach(function(child) {
+    classes.forEach(function(toggleClass) {
+      if (child.classList.contains(toggleClass))
+        child.classList.remove(toggleClass);
+      else
+        child.classList.add(toggleClass);
+    });
+  });
+}
+
+elements.forEach(function(element) {
+  element.addEventListener('mouseenter', onhover);
+  element.addEventListener('mouseleave', onhover);
+});
+
 //FOLLOW THE MOUSE
+
+
+// function getMouseCoords(e) {
+//   var e = e || window.event;
+//   document.getElementById('container').innerHTML = e.clientX + ', ' +
+//     e.clientY + '<br>' + e.screenX + ', ' + e.screenY;
+// }
+//
+// var followCursor = (function() {
+//   var s = document.createElement('div');
+//   s.style.position = 'absolute';
+//   s.style.width = '50px';
+//   s.style.height = '50px';
+//   s.style.margin = '0';
+//   s.style.backgroundColor = 'red';
+//   s.style.borderRadius = '50%';
+//
+//   return {
+//     init: function() {
+//       document.body.appendChild(s);
+//     },
+//
+//     run: function(e) {
+//       var e = e || window.event;
+//       s.style.left = (e.clientX - 5) + 'px';
+//       s.style.top = (e.clientY - 5) + 'px';
+//       getMouseCoords(e);
+//     }
+//   };
+// }());
+//
+// window.onload = function() {
+//   parentdiv = document.getElementById("parentdiv");
+//   followCursor.init();
+//   document.body.onmousemove = followCursor.run;
+// }
 
 //AVOID THE MOUSE
 

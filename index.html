@@ -128,18 +128,27 @@
 <!--HOVER IMAGES-->
 
   <div class="row popupText">
-    <div class="col-12 text"><span class="it">It</span><span class="al">al</span><span class="y">y</span> has many wonderful cities, such as the capital <span class="city">Rome</span><div class="hover-image"><img src="img/city/roma.jpg" alt="Roma"></div> with all its history that can still be felt while walking around through all the monuments and ancient streets. The same goes for <span class="city">Napoli</span><div class="hover-image"><img src="img/city/napoli.jpg" alt="Napoli"></div>, which has many Greek influences in architecture and traditions. If you travel up north, you will find the economical capital <span class="city">Milano</span><div class="hover-image"><img src="img/city/milano.jpg" alt="Milano"></div> which has all the major companies and financial institutions. Also worth a visit is <span class="city">Torino</span><div class="hover-image"><img src="img/city/torino.jpg" alt="Torino"></div>, a beautiful city that almost feels French (which makes sense since it has been part of the French empire for centuries. Last but not least, <span class="city">Bologna</span><div class="hover-image"><img src="img/city/bologna.jpg" alt="Bologna"></div> is the capital of students, food and - in the wider region - high end cars.</div>
+    <div class="col-12 text"><span class="it">It</span><span class="al">al</span><span class="y">y</span> has many wonderful cities, such as the capital <div class="city relative onhover-toggle-child-class" data-target=".target" data-toggle="hidden shown">Roma<span class="absolute target on-top hidden"><img src="img/city/roma.jpg" alt="image" height="200" /></span></div> with all its history that can still be felt while walking around through all the monuments and ancient streets. The same goes for <div class="city relative onhover-toggle-child-class" data-target=".target2" data-toggle="hidden shown">Napoli<span class="absolute target2 on-top hidden"><img src="img/city/napoli.jpg" alt="image" height="200" /></span></div>, which has many Greek influences in architecture and traditions. If you travel up north, you will find the economical capital <div class="city relative onhover-toggle-child-class" data-target=".target3" data-toggle="hidden shown">Milano<span class="absolute target3 on-top hidden"><img src="img/city/milano.jpg" alt="image" height="200" /></span></div> which has all the major companies and financial institutions. Also worth a visit is <div class="city relative onhover-toggle-child-class" data-target=".target4" data-toggle="hidden shown">Torino<span class="absolute target4 on-top hidden"><img src="img/city/torino.jpg" alt="image" height="200" /></span></div>, a beautiful city that almost feels French (which makes sense since it has been part of the French empire for centuries. Last but not least, <div class="city relative onhover-toggle-child-class" data-target=".target5" data-toggle="hidden shown">Bologna<span class="absolute target5 on-top hidden"><img src="img/city/bologna.jpg" alt="image" height="200" /></span></div> is the capital of students, food and - in the wider region - high end cars.</div>
   </div>
+
+  <!--MOUSE CHASER -->
+
   <div class="row game">
     <div class="col-12 title">See this red circle in the box? I want you to make this a chasing circle, it will run after your cursor as long as it is in the box!</div>
-    <div class="col-12 box" id="parentbox">
+    <div class="col-12 box chasing" id="parentbox">
       <div class="chaser" id="chaser"></div>
     </div>
+
+    <!--MOUSE RUNNER -->
+
     <div class="col-12 title">See this green circle in the box? I want you to make this a running circle, it will run away from your cursor as long as it is in the box!</div>
-    <div class="col-12 box">
+    <div class="col-12 box running">
       <div class="runner"></div>
     </div>
   </div>
+
+  <!--TEXT EFFECTS -->
+
   <div class="row wtf">
     <div class="col-12 title">As a final challenge, I want you to get creative! All of the following letters in the box are inside of spans with the same class. Based on key inputs or mouse movements I want you to make them do weird stuff. It could be anything! For example, you can make all the "e" letters disappear if you press said key. You could make all letters move / rotate when you move the mouse, based on which letter it is! Go crazy!</div>
     <div class="col-12 box">
