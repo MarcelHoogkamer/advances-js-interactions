@@ -1,12 +1,3 @@
-Array.from(document.querySelectorAll(".letter")).forEach(el => {
-  el.innerText = randomLetter();
-});
-
-function randomLetter(){
-  const alphabet = "abcdefghijklmnopqrstuvwxyz"
-  return alphabet[Math.floor(Math.random() * alphabet.length)]
-}
-
 // DARK MODE FEATURE
 let content = document.getElementsByTagName('body')[0];
 let darkMode = document.getElementById('dark-change');
@@ -93,7 +84,6 @@ function myFunction() {
   }
 }
 
-
 //IMAGE GALLERY
 let largeView = document.querySelector(".largeView");
 let largeImage = document.querySelector(".largeImage");
@@ -138,42 +128,44 @@ elements.forEach(function(element) {
 
 //FOLLOW THE MOUSE
 
+let chaser = document.querySelector('.chaser');
+let divbox = document.querySelector(".game");
+let x = 0;
+let y = 0;
 
-// function getMouseCoords(e) {
-//   var e = e || window.event;
-//   document.getElementById('container').innerHTML = e.clientX + ', ' +
-//     e.clientY + '<br>' + e.screenX + ', ' + e.screenY;
-// }
-//
-// var followCursor = (function() {
-//   var s = document.createElement('div');
-//   s.style.position = 'absolute';
-//   s.style.width = '50px';
-//   s.style.height = '50px';
-//   s.style.margin = '0';
-//   s.style.backgroundColor = 'red';
-//   s.style.borderRadius = '50%';
-//
-//   return {
-//     init: function() {
-//       document.body.appendChild(s);
-//     },
-//
-//     run: function(e) {
-//       var e = e || window.event;
-//       s.style.left = (e.clientX - 5) + 'px';
-//       s.style.top = (e.clientY - 5) + 'px';
-//       getMouseCoords(e);
-//     }
-//   };
-// }());
-//
-// window.onload = function() {
-//   parentdiv = document.getElementById("parentdiv");
-//   followCursor.init();
-//   document.body.onmousemove = followCursor.run;
-// }
+divbox.addEventListener('mouseover', mouseMove);
+divbox.addEventListener('mouseleave', () => {
+    insideBox = false;
+})
+let insideBox = false;
+
+function mouseMove(e) {
+
+    insideBox = true;
+    console.log(insideBox);
+}
+document.onmousemove = trackMouse;
+function trackMouse(e){
+    if(insideBox){
+        chaser.style.left = e.pageX - 25 + 'px';
+        chaser.style.top = e.pageY - 25 + 'px';
+    }
+}
 
 //AVOID THE MOUSE
 
 //TEXT EFFECTS
+
+Array.from(document.querySelectorAll(".letter")).forEach(el => {
+  el.innerText = randomLetter();
+});
+
+function randomLetter(){
+  const alphabet = "abcdefghijklmnopqrstuvwxyz"
+  return alphabet[Math.floor(Math.random() * alphabet.length)]
+}
+
+let randomletters = document.getElementsByClassName("letters").innerText;
+console.log(randomletters);
+
+

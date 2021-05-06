@@ -270,17 +270,20 @@ body.night {
 
 .picture{
   padding: 10px;
+  cursor: pointer;
 }
 
 .image{
   height: 250px;
   width: 310px;
   filter: grayscale(50%);
+  cursor: pointer;
 
   &:hover {
   border-radius: 20px;
     border: 2px solid rgb(10, 10, 10);
     filter: grayscale(0%);
+    cursor: pointer;
   }
 }
 
@@ -332,36 +335,20 @@ body.night {
 }
 
 // MOUSE CHASER
-.chaser{
+
+.chaser {
   width: 50px;
   height: 50px;
   background: red;
   border-radius: 50%;
+  top:50%;
+  left:50%;
+  position: absolute;
+  z-index: 1000;
 }
 
 // MOUSE RUNNER
 
-.container2 {
-  margin: 0 auto;
-  height: 300px;
-  width: 100%;
-  border: 1px #000 solid;
-  position: relative;
-}
-
-.box-bounds2 {
-  padding: 10px;
-  position: absolute;
-}
-
-.box2 {
-  width: 50px;
-  height: 50px;
-  border: 1px #000 solid;
-  right: 200px;
-  background: red;
-  transition: 0.5s;
-}
 
 .runner{
   width: 50px;
