@@ -130,7 +130,7 @@ body.night {
 }
 .prev:hover,
 .next:hover {
-  background: powderblue;
+  background: forestgreen;
 }
 .next {
   display: block;
@@ -160,12 +160,21 @@ body.night {
   margin-left: 280px;
 }
 
+.effect {
+  animation-name: effect;
+  animation-duration: 0.5s;
+}
+
+@keyframes effect {
+  from {
+    opacity: .7
+  }
+  to {
+    opacity: 1
+  }
+}
 
 //IMAGE GALLERY
-
-#images-box {
-  margin-top: 50px;
-}
 
 .card {
   background-color: transparent;
@@ -234,31 +243,38 @@ body.night {
   }
 }
 
-//.card .image img {
-//  cursor: pointer;
-//  height: 230px;
-//  width: 100%;
-//  filter: grayscale(50%);
-//
-//  &:hover {
-//    filter: grayscale(0%);
-//    border-radius: 20px;
-//    border: 2px solid rgba(10, 10, 10);
-//  }
-//}
-
 // IMAGE ON TEXT HOVER
+.popupText {
+  margin-top: 50px;
+}
 
-.poke{
+.it {
+  color: orangered;
+}
+
+.al {
+  color: white;
+  text-shadow: 2px 2px 4px rgb(10, 10, 10);
+}
+
+.y {
+  color: forestgreen;
+}
+
+.city{
   font-weight: bold;
 }
 
+
+// MOUSE CHASER
 .chaser{
   width: 50px;
   height: 50px;
   background: red;
   border-radius: 50%;
 }
+
+// MOUSE RUNNER
 
 .runner{
   width: 50px;

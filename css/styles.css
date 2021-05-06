@@ -132,7 +132,7 @@ body.night .image:hover {
 
 .prev:hover,
 .next:hover {
-  background: powderblue;
+  background: forestgreen;
 }
 
 .next {
@@ -167,10 +167,19 @@ body.night .image:hover {
   margin-left: 280px;
 }
 
-#images-box {
-  margin-top: 50px;
+.effect {
+  animation-name: effect;
+  animation-duration: 0.5s;
 }
 
+@keyframes effect {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .card {
   background-color: transparent;
   border: none;
@@ -237,7 +246,24 @@ body.night .image:hover {
   filter: grayscale(0%);
 }
 
-.poke {
+.popupText {
+  margin-top: 50px;
+}
+
+.it {
+  color: orangered;
+}
+
+.al {
+  color: white;
+  text-shadow: 2px 2px 4px #0a0a0a;
+}
+
+.y {
+  color: forestgreen;
+}
+
+.city {
   font-weight: bold;
 }
 
