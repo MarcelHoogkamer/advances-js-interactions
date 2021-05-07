@@ -186,12 +186,12 @@ body.night {
 .next {
   display: block;
   right: 20%;
-  top: 175px;
+  top: 220px;
 }
 .prev {
   display: block;
   left: 20%;
-  top: 175px;
+  top: 220px;
 }
 .before,
 .after {
@@ -347,6 +347,10 @@ body.night {
 
 // MOUSE CHASER
 
+#parentbox {
+  z-index: -2;
+}
+
 .chaser {
   width: 50px;
   height: 50px;
@@ -355,7 +359,7 @@ body.night {
   top:50%;
   left:50%;
   position: absolute;
-  z-index: 1000;
+  z-index: -1;
 }
 
 // MOUSE RUNNER

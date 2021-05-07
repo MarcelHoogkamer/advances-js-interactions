@@ -129,7 +129,7 @@ elements.forEach(function(element) {
 //FOLLOW THE MOUSE
 
 let chaser = document.querySelector('.chaser');
-let divbox = document.querySelector(".game");
+let divbox = document.getElementById("parentbox");
 let x = 0;
 let y = 0;
 
