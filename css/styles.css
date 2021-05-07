@@ -12,6 +12,17 @@ body {
   text-align: justify;
 }
 
+.top-container {
+  margin: auto;
+  background-color: orangered;
+  color: whitesmoke;
+  height: 60px;
+}
+.top-container p {
+  text-align: center;
+  padding-top: 18px;
+}
+
 .header {
   display: flex;
   width: 100%;

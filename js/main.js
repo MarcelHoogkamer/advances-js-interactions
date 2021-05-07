@@ -165,7 +165,20 @@ function randomLetter(){
   return alphabet[Math.floor(Math.random() * alphabet.length)]
 }
 
-let randomletters = document.getElementsByClassName("letters").innerText;
-console.log(randomletters);
+let text = document.getElementById("letters").innerText;
 
+let splitText = text.split("");
+document.getElementById("letters").innerText = "";
+let index = 0
 
+let delay = setInterval(typeWriter, (Math.random() * 50));
+
+function typeWriter() {
+  if (index === splitText.length) {
+    clearInterval(delay);
+  }
+  else {
+    document.getElementById("letters").innerHTML += splitText[index];
+    index++;
+  }
+}

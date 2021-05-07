@@ -13,6 +13,17 @@ body{
   text-align: justify;
 }
 
+.top-container {
+  margin: auto;
+  background-color: orangered;
+  color: rgba(245, 245, 245);
+  height: 60px;
+
+  p {
+  text-align: center;
+  padding-top: 18px;
+  }
+}
 
 // DARK MODE FEATURE
 .header {
